@@ -1,0 +1,17 @@
+{
+  "name": "wp-starter-theme",
+  "version": "1.0.0",
+  "description": "Modern WordPress block theme with FSE, theme.json v3, and block patterns.",
+  "license": "GPL-2.0-or-later",
+  "scripts": {
+    "build": "wp-scripts build assets/js/navigation.ts assets/js/customizer-preview.ts --output-path=assets/js/dist",
+    "dev": "wp-scripts start assets/js/navigation.ts assets/js/customizer-preview.ts --output-path=assets/js/dist",
+    "lint:js": "wp-scripts lint-js assets/js/",
+    "lint:style": "wp-scripts lint-style assets/css/"
+  },
+  "devDependencies": {
+    "@wordpress/scripts": "^30",
+    "@types/wordpress__blocks": "^12",
+    "typescript": "^5"
+  }
+}

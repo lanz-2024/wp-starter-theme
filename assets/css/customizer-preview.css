@@ -1,0 +1,11 @@
+/**
+ * Customizer live-preview CSS.
+ *
+ * This file is intentionally empty. All live-preview updates are handled
+ * via postMessage in customizer-preview.ts, which injects inline CSS
+ * custom property overrides directly on <html> or targeted elements.
+ *
+ * If CSS-only transitions are ever needed they can be placed here.
+ *
+ * @package WPStarterTheme
+ */

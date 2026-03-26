@@ -1,0 +1,75 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/theme.json",
+  "version": 3,
+  "title": "Dark",
+  "slug": "dark",
+  "settings": {
+    "color": {
+      "palette": [
+        { "slug": "primary",      "color": "#3b82f6", "name": "Primary" },
+        { "slug": "primary-dark", "color": "#2563eb", "name": "Primary Dark" },
+        { "slug": "secondary",    "color": "#a78bfa", "name": "Secondary" },
+        { "slug": "neutral-900",  "color": "#f9fafb", "name": "Neutral 900" },
+        { "slug": "neutral-100",  "color": "#374151", "name": "Neutral 100" },
+        { "slug": "white",        "color": "#111827", "name": "White" },
+        { "slug": "black",        "color": "#f9fafb", "name": "Black" }
+      ]
+    }
+  },
+  "styles": {
+    "color": {
+      "background": "#0f172a",
+      "text": "#f1f5f9"
+    },
+    "elements": {
+      "link": {
+        "color": {
+          "text": "#3b82f6"
+        },
+        ":hover": {
+          "color": {
+            "text": "#60a5fa"
+          }
+        }
+      },
+      "button": {
+        "color": {
+          "background": "#3b82f6",
+          "text": "#ffffff"
+        },
+        ":hover": {
+          "color": {
+            "background": "#2563eb"
+          }
+        }
+      },
+      "h1": { "color": { "text": "#f9fafb" } },
+      "h2": { "color": { "text": "#f9fafb" } },
+      "h3": { "color": { "text": "#f9fafb" } },
+      "h4": { "color": { "text": "#f9fafb" } },
+      "h5": { "color": { "text": "#f9fafb" } },
+      "h6": { "color": { "text": "#f9fafb" } }
+    },
+    "blocks": {
+      "core/code": {
+        "color": {
+          "background": "#1e293b",
+          "text": "#e2e8f0"
+        },
+        "border": {
+          "color": "#334155"
+        }
+      },
+      "core/quote": {
+        "border": {
+          "color": "#3b82f6"
+        }
+      },
+      "core/separator": {
+        "color": {
+          "text": "#374151"
+        }
+      }
+    }
+  }
+}

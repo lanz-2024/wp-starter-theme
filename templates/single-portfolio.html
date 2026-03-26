@@ -1,0 +1,71 @@
+<!-- wp:template-part {"slug":"header","tagName":"header"} /-->
+
+<!-- wp:group {"tagName":"main","layout":{"type":"constrained"},"style":{"spacing":{"padding":{"top":"var:preset|spacing|xl","bottom":"var:preset|spacing|xl"}}}} -->
+<main class="wp-block-group">
+
+    <!-- wp:group {"tagName":"article","layout":{"type":"constrained"}} -->
+    <article class="wp-block-group">
+
+        <!-- wp:post-featured-image {"style":{"border":{"radius":"8px"},"spacing":{"margin":{"bottom":"var:preset|spacing|lg"}}}} /-->
+
+        <!-- wp:post-title {"level":1,"style":{"spacing":{"margin":{"bottom":"var:preset|spacing|md"}}}} /-->
+
+        <!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|md","padding":{"top":"var:preset|spacing|md","bottom":"var:preset|spacing|md"}},"border":{"top":{"color":"var:preset|color|neutral-100","width":"1px"},"bottom":{"color":"var:preset|color|neutral-100","width":"1px"}},"spacing":{"margin":{"bottom":"var:preset|spacing|lg"}}}} -->
+        <div class="wp-block-group">
+
+            <!-- wp:columns -->
+            <div class="wp-block-columns">
+                <!-- wp:column {"width":"50%"} -->
+                <div class="wp-block-column" style="flex-basis:50%">
+                    <!-- wp:heading {"level":6,"style":{"typography":{"textTransform":"uppercase","letterSpacing":"0.1em","fontSize":"var:preset|font-size|xs"},"color":{"text":"var:preset|color|neutral-900"}}} -->
+                    <h6 class="wp-block-heading has-neutral-900-color has-text-color">Client</h6>
+                    <!-- /wp:heading -->
+                    <!-- wp:post-meta {"key":"_portfolio_client","style":{"typography":{"fontSize":"var:preset|font-size|base"},"typography":{"fontWeight":"500"}}} /-->
+                </div>
+                <!-- /wp:column -->
+
+                <!-- wp:column {"width":"50%"} -->
+                <div class="wp-block-column" style="flex-basis:50%">
+                    <!-- wp:heading {"level":6,"style":{"typography":{"textTransform":"uppercase","letterSpacing":"0.1em","fontSize":"var:preset|font-size|xs"},"color":{"text":"var:preset|color|neutral-900"}}} -->
+                    <h6 class="wp-block-heading has-neutral-900-color has-text-color">Year</h6>
+                    <!-- /wp:heading -->
+                    <!-- wp:post-meta {"key":"_portfolio_year","style":{"typography":{"fontSize":"var:preset|font-size|base","fontWeight":"500"}}} /-->
+                </div>
+                <!-- /wp:column -->
+            </div>
+            <!-- /wp:columns -->
+
+            <!-- wp:columns -->
+            <div class="wp-block-columns">
+                <!-- wp:column {"width":"50%"} -->
+                <div class="wp-block-column" style="flex-basis:50%">
+                    <!-- wp:heading {"level":6,"style":{"typography":{"textTransform":"uppercase","letterSpacing":"0.1em","fontSize":"var:preset|font-size|xs"},"color":{"text":"var:preset|color|neutral-900"}}} -->
+                    <h6 class="wp-block-heading has-neutral-900-color has-text-color">Services</h6>
+                    <!-- /wp:heading -->
+                    <!-- wp:post-terms {"term":"portfolio_type","style":{"typography":{"fontSize":"var:preset|font-size|base"}}} /-->
+                </div>
+                <!-- /wp:column -->
+
+                <!-- wp:column {"width":"50%"} -->
+                <div class="wp-block-column" style="flex-basis:50%">
+                    <!-- wp:heading {"level":6,"style":{"typography":{"textTransform":"uppercase","letterSpacing":"0.1em","fontSize":"var:preset|font-size|xs"},"color":{"text":"var:preset|color|neutral-900"}}} -->
+                    <h6 class="wp-block-heading has-neutral-900-color has-text-color">URL</h6>
+                    <!-- /wp:heading -->
+                    <!-- wp:post-meta {"key":"_portfolio_url"} /-->
+                </div>
+                <!-- /wp:column -->
+            </div>
+            <!-- /wp:columns -->
+
+        </div>
+        <!-- /wp:group -->
+
+        <!-- wp:post-content {"layout":{"type":"constrained"}} /-->
+
+    </article>
+    <!-- /wp:group -->
+
+</main>
+<!-- /wp:group -->
+
+<!-- wp:template-part {"slug":"footer","tagName":"footer"} /-->

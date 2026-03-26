@@ -1,0 +1,36 @@
+# Composer
+/vendor/
+
+# Node
+/node_modules/
+
+# Compiled JS (built from TypeScript sources)
+/assets/js/dist/
+
+# Build artefacts
+*.map
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# WordPress
+wp-config.php
+
+# Environment
+.env
+.env.*
+
+# PHPStan cache
+.phpstan-cache/
+/phpstan.neon.dist
+
+# Test artefacts
+/coverage/
+/.phpunit.cache/
