@@ -85,7 +85,7 @@ class CustomizerProvider {
 		$wp_customize->add_setting(
 			'header_sticky',
 			array(
-				'default'           => false,
+				'default'           => '',
 				'transport'         => 'refresh',
 				'sanitize_callback' => array( $this, 'sanitize_checkbox' ),
 			)
@@ -125,7 +125,7 @@ class CustomizerProvider {
 		$wp_customize->add_setting(
 			'header_height',
 			array(
-				'default'           => 64,
+				'default'           => '64',
 				'transport'         => 'postMessage',
 				'sanitize_callback' => array( $this, 'sanitize_int_range' ),
 			)

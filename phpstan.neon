@@ -8,5 +8,5 @@ parameters:
     bootstrapFiles:
         - vendor/autoload.php
     ignoreErrors:
-        # Walker methods use non-strict parameter types inherited from WP core.
-        - '#Parameter \#1 \$item of method WPStarterTheme\\Walkers\\MegaMenuWalker::start_el\(\) should be compatible#'
+        # @return T|null PHPDoc on generic method — PHPStan cannot verify T extends object here.
+        - identifier: return.phpDocType
