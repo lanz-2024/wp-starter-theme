@@ -31,8 +31,8 @@
     }
   },
   "scripts": {
-    "phpcs": "phpcs --standard=WordPress src/",
-    "phpcbf": "phpcbf --standard=WordPress src/",
+    "phpcs": "phpcs --standard=phpcs.xml src/",
+    "phpcbf": "phpcbf --standard=phpcs.xml src/",
     "phpstan": "phpstan analyse src/ --level=5",
     "test": "phpunit"
   },

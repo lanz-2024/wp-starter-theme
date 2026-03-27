@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<ruleset name="WP Starter Theme">
+	<description>WordPress coding standards — PSR-4 file naming excluded.</description>
+
+	<rule ref="WordPress"/>
+
+	<!-- PSR-4 architecture uses PascalCase filenames — skip WP filename sniff -->
+	<rule ref="WordPress.Files.FileName">
+		<exclude-pattern>src/*</exclude-pattern>
+	</rule>
+
+	<!-- Allow short array syntax [] as used throughout -->
+	<rule ref="Generic.Arrays.DisallowShortArraySyntax">
+		<severity>0</severity>
+	</rule>
+
+	<!-- PSR-4 Walker API uses $class parameter name from WordPress core -->
+	<rule ref="Universal.NamingConventions.NoReservedKeywordParameterNames">
+		<severity>0</severity>
+	</rule>
+
+	<!-- class-string PHPDoc type hint is not required for string parameters -->
+	<rule ref="Squiz.Commenting.FunctionComment.IncorrectTypeHint">
+		<severity>0</severity>
+	</rule>
+
+	<arg name="basepath" value="."/>
+	<arg name="colors"/>
+	<arg value="sp"/>
+</ruleset>

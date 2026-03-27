@@ -1,0 +1,6 @@
+{
+  "redefinable-internals": [
+    "filemtime",
+    "file_exists"
+  ]
+}

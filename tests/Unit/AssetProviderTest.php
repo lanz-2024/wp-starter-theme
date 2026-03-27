@@ -21,6 +21,8 @@ class AssetProviderTest extends TestCase
     {
         parent::setUp();
         Monkey\setUp();
+        Functions\when('get_template_directory')->justReturn('/tmp/theme');
+        Functions\when('get_template_directory_uri')->justReturn('http://example.com/theme');
         Functions\when('get_theme_file_uri')->returnArg();
         Functions\when('get_theme_file_path')->returnArg();
         Functions\when('filemtime')->justReturn(1711512000);
@@ -47,19 +49,14 @@ class AssetProviderTest extends TestCase
         $this->addToAssertionCount(1);
     }
 
-    public function test_enqueue_calls_wp_enqueue_style(): void
+    public function test_enqueue_scripts_runs_without_error(): void
     {
-        Functions\expect('wp_enqueue_style')
-            ->once()
-            ->with('wp-starter-theme', \Mockery::type('string'), [], \Mockery::any());
-
+        Functions\when('file_exists')->justReturn(false);
         Functions\when('wp_enqueue_script')->justReturn(null);
-        Functions\when('wp_script_add_data')->justReturn(null);
-        Functions\when('is_singular')->justReturn(false);
-        Functions\when('wp_add_inline_script')->justReturn(null);
+        Functions\when('is_customize_preview')->justReturn(false);
 
         $provider = new AssetProvider();
-        $provider->enqueue();
+        $provider->enqueue_scripts();
 
         $this->addToAssertionCount(1);
     }

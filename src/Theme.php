@@ -24,66 +24,68 @@ use WPStarterTheme\Providers\SupportProvider;
  */
 final class Theme {
 
-    /**
-     * Registered service providers.
-     *
-     * @var array<int, object>
-     */
-    private static array $providers = [];
+	/**
+	 * Registered service providers.
+	 *
+	 * @var array<int, object>
+	 */
+	private static array $providers = array();
 
-    /**
-     * Whether the theme has been initialised.
-     */
-    private static bool $initialised = false;
+	/**
+	 * Whether the theme has been initialised.
+	 *
+	 * @var bool
+	 */
+	private static bool $initialised = false;
 
-    /**
-     * Boot all service providers.
-     *
-     * Safe to call multiple times — subsequent calls are no-ops.
-     */
-    public static function init(): void {
-        if ( self::$initialised ) {
-            return;
-        }
+	/**
+	 * Boot all service providers.
+	 *
+	 * Safe to call multiple times — subsequent calls are no-ops.
+	 */
+	public static function init(): void {
+		if ( self::$initialised ) {
+			return;
+		}
 
-        self::$initialised = true;
+		self::$initialised = true;
 
-        self::$providers = [
-            new SupportProvider(),
-            new AssetProvider(),
-            new MenuProvider(),
-            new PatternProvider(),
-            new CustomizerProvider(),
-        ];
+		self::$providers = array(
+			new SupportProvider(),
+			new AssetProvider(),
+			new MenuProvider(),
+			new PatternProvider(),
+			new CustomizerProvider(),
+		);
 
-        foreach ( self::$providers as $provider ) {
-            $provider->register();
-        }
-    }
+		foreach ( self::$providers as $provider ) {
+			$provider->register();
+		}
+	}
 
-    /**
-     * Retrieve a registered provider by class name (useful in tests).
-     *
-     * @template T
-     * @param class-string<T> $class Fully-qualified class name.
-     * @return T|null
-     */
-    public static function get_provider( string $class ): ?object {
-        foreach ( self::$providers as $provider ) {
-            if ( $provider instanceof $class ) {
-                return $provider;
-            }
-        }
-        return null;
-    }
+	/**
+	 * Retrieve a registered provider by class name (useful in tests).
+	 *
+	 * @template T
+	 * @param class-string<T> $class Fully-qualified class name.
+	 * @return T|null
+	 */
+	public static function get_provider( string $class ): ?object {
+		foreach ( self::$providers as $provider ) {
+			if ( $provider instanceof $class ) {
+				return $provider;
+			}
+		}
+		return null;
+	}
 
-    /**
-     * Reset theme state (test helper — not for production use).
-     *
-     * @internal
-     */
-    public static function reset(): void {
-        self::$providers  = [];
-        self::$initialised = false;
-    }
+	/**
+	 * Reset theme state (test helper — not for production use).
+	 *
+	 * @internal
+	 */
+	public static function reset(): void {
+		self::$providers   = array();
+		self::$initialised = false;
+	}
 }

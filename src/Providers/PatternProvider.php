@@ -18,37 +18,37 @@ namespace WPStarterTheme\Providers;
  */
 class PatternProvider {
 
-    /**
-     * Wire up WordPress hooks.
-     */
-    public function register(): void {
-        add_action( 'init', [ $this, 'register_pattern_categories' ] );
-    }
+	/**
+	 * Wire up WordPress hooks.
+	 */
+	public function register(): void {
+		add_action( 'init', array( $this, 'register_pattern_categories' ) );
+	}
 
-    /**
-     * Declare custom pattern categories used by this theme.
-     */
-    public function register_pattern_categories(): void {
-        $categories = [
-            'wp-starter-theme' => [
-                'label' => __( 'WP Starter Theme', 'wp-starter-theme' ),
-            ],
-            'banner' => [
-                'label' => __( 'Banners', 'wp-starter-theme' ),
-            ],
-            'call-to-action' => [
-                'label' => __( 'Call to Action', 'wp-starter-theme' ),
-            ],
-            'testimonials' => [
-                'label' => __( 'Testimonials', 'wp-starter-theme' ),
-            ],
-            'portfolio' => [
-                'label' => __( 'Portfolio', 'wp-starter-theme' ),
-            ],
-        ];
+	/**
+	 * Declare custom pattern categories used by this theme.
+	 */
+	public function register_pattern_categories(): void {
+		$categories = array(
+			'wp-starter-theme' => array(
+				'label' => __( 'WP Starter Theme', 'wp-starter-theme' ),
+			),
+			'banner'           => array(
+				'label' => __( 'Banners', 'wp-starter-theme' ),
+			),
+			'call-to-action'   => array(
+				'label' => __( 'Call to Action', 'wp-starter-theme' ),
+			),
+			'testimonials'     => array(
+				'label' => __( 'Testimonials', 'wp-starter-theme' ),
+			),
+			'portfolio'        => array(
+				'label' => __( 'Portfolio', 'wp-starter-theme' ),
+			),
+		);
 
-        foreach ( $categories as $slug => $args ) {
-            register_block_pattern_category( $slug, $args );
-        }
-    }
+		foreach ( $categories as $slug => $args ) {
+			register_block_pattern_category( $slug, $args );
+		}
+	}
 }
