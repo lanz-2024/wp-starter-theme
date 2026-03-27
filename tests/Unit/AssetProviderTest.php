@@ -21,6 +21,8 @@ class AssetProviderTest extends TestCase
     {
         parent::setUp();
         Monkey\setUp();
+        Functions\when('get_template_directory')->justReturn('/tmp/theme');
+        Functions\when('get_template_directory_uri')->justReturn('http://example.com/theme');
         Functions\when('get_theme_file_uri')->returnArg();
         Functions\when('get_theme_file_path')->returnArg();
         Functions\when('filemtime')->justReturn(1711512000);
