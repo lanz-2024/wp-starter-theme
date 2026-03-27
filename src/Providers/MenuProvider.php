@@ -14,40 +14,42 @@ namespace WPStarterTheme\Providers;
  */
 class MenuProvider {
 
-    /**
-     * Wire up WordPress hooks.
-     */
-    public function register(): void {
-        add_action( 'after_setup_theme',     [ $this, 'register_menus' ] );
-        add_filter( 'wp_nav_menu_items',     [ $this, 'add_search_to_primary_menu' ], 10, 2 );
-    }
+	/**
+	 * Wire up WordPress hooks.
+	 */
+	public function register(): void {
+		add_action( 'after_setup_theme', array( $this, 'register_menus' ) );
+		add_filter( 'wp_nav_menu_items', array( $this, 'add_search_to_primary_menu' ), 10, 2 );
+	}
 
-    /**
-     * Declare the theme's navigation menu locations.
-     */
-    public function register_menus(): void {
-        register_nav_menus( [
-            'primary' => __( 'Primary Navigation', 'wp-starter-theme' ),
-            'footer'  => __( 'Footer Navigation', 'wp-starter-theme' ),
-            'mobile'  => __( 'Mobile Navigation', 'wp-starter-theme' ),
-        ] );
-    }
+	/**
+	 * Declare the theme's navigation menu locations.
+	 */
+	public function register_menus(): void {
+		register_nav_menus(
+			array(
+				'primary' => __( 'Primary Navigation', 'wp-starter-theme' ),
+				'footer'  => __( 'Footer Navigation', 'wp-starter-theme' ),
+				'mobile'  => __( 'Mobile Navigation', 'wp-starter-theme' ),
+			)
+		);
+	}
 
-    /**
-     * Append an accessible search toggle to the primary menu.
-     *
-     * @param string    $items HTML list items.
-     * @param \stdClass $args  wp_nav_menu() arguments.
-     *
-     * @return string Modified menu HTML.
-     */
-    public function add_search_to_primary_menu( string $items, \stdClass $args ): string {
-        if ( ( $args->theme_location ?? '' ) !== 'primary' ) {
-            return $items;
-        }
+	/**
+	 * Append an accessible search toggle to the primary menu.
+	 *
+	 * @param string    $items HTML list items.
+	 * @param \stdClass $args  wp_nav_menu() arguments.
+	 *
+	 * @return string Modified menu HTML.
+	 */
+	public function add_search_to_primary_menu( string $items, \stdClass $args ): string {
+		if ( ( $args->theme_location ?? '' ) !== 'primary' ) {
+			return $items;
+		}
 
-        $search_icon = sprintf(
-            '<li class="menu-item menu-item--search">
+		$search_icon = sprintf(
+			'<li class="menu-item menu-item--search">
                 <button
                     class="site-search-toggle"
                     aria-label="%s"
@@ -62,10 +64,10 @@ class MenuProvider {
                     <span class="screen-reader-text">%s</span>
                 </button>
             </li>',
-            esc_attr__( 'Toggle search', 'wp-starter-theme' ),
-            esc_html__( 'Search', 'wp-starter-theme' )
-        );
+			esc_attr__( 'Toggle search', 'wp-starter-theme' ),
+			esc_html__( 'Search', 'wp-starter-theme' )
+		);
 
-        return $items . $search_icon;
-    }
+		return $items . $search_icon;
+	}
 }

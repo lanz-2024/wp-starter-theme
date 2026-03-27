@@ -17,41 +17,41 @@ namespace WPStarterTheme\Customizer\Sections;
  */
 class FooterSection {
 
-    /**
-     * Section registration arguments for WP_Customize_Manager::add_section().
-     *
-     * @return array<string, mixed>
-     */
-    public static function section_args(): array {
-        return [
-            'title'       => __( 'Footer Options', 'wp-starter-theme' ),
-            'description' => __( 'Customise the site footer appearance and copyright text.', 'wp-starter-theme' ),
-            'panel'       => 'wp_starter_theme_options',
-            'priority'    => 20,
-        ];
-    }
+	/**
+	 * Section registration arguments for WP_Customize_Manager::add_section().
+	 *
+	 * @return array<string, mixed>
+	 */
+	public static function section_args(): array {
+		return array(
+			'title'       => __( 'Footer Options', 'wp-starter-theme' ),
+			'description' => __( 'Customise the site footer appearance and copyright text.', 'wp-starter-theme' ),
+			'panel'       => 'wp_starter_theme_options',
+			'priority'    => 20,
+		);
+	}
 
-    /**
-     * Setting definitions.
-     *
-     * @return array<string, array<string, mixed>>
-     */
-    public static function settings(): array {
-        return [
-            'footer_copyright_text' => [
-                'default'           => sprintf(
-                    /* translators: %d: current year */
-                    __( '&copy; %d WP Starter Theme. All rights reserved.', 'wp-starter-theme' ),
-                    (int) gmdate( 'Y' )
-                ),
-                'transport'         => 'postMessage',
-                'sanitize_callback' => 'wp_kses_post',
-            ],
-            'footer_bg_color' => [
-                'default'           => '#111827',
-                'transport'         => 'postMessage',
-                'sanitize_callback' => 'sanitize_hex_color',
-            ],
-        ];
-    }
+	/**
+	 * Setting definitions.
+	 *
+	 * @return array<string, array<string, mixed>>
+	 */
+	public static function settings(): array {
+		return array(
+			'footer_copyright_text' => array(
+				'default'           => sprintf(
+					/* translators: %d: current year */
+					__( '&copy; %d WP Starter Theme. All rights reserved.', 'wp-starter-theme' ),
+					(int) gmdate( 'Y' )
+				),
+				'transport'         => 'postMessage',
+				'sanitize_callback' => 'wp_kses_post',
+			),
+			'footer_bg_color'       => array(
+				'default'           => '#111827',
+				'transport'         => 'postMessage',
+				'sanitize_callback' => 'sanitize_hex_color',
+			),
+		);
+	}
 }
